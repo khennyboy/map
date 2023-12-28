@@ -78,8 +78,6 @@ class App{
     _loadMap(position){
         console.log(position)
         const {latitude, longitude} = position.coords;
-        console.log(latitude, longitude)
-        console.log(`https://www.google.pt/maps/@${latitude},${longitude}`);
         const coords = [latitude, longitude];
         this.#map = L.map('map').setView(coords, 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

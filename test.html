@@ -9,24 +9,51 @@
     <link rel="stylesheet" href="./test.css">
 </head>
 <body>
-    <div>
-     <textarea class="text"></textarea>    
+    <div class="editor_content">
+     <textarea class="text" style="display: none;"></textarea>    
     </div>
-<script>
-  tinymce.init({
-    selector: '.text',
-    width: 800,
-    resize: 'none',
-    plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-    tinycomments_mode: 'embedded',
-    tinycomments_author: 'Author name',
-    mergetags_list: [
-      { value: 'First.Name', title: 'First Name' },
-      { value: 'Email', title: 'Email' },
-    ],
-    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
-  });
-</script>
+<section id="slide">
+  <div class="slide"><img src="./images/img-1.jpg" alt="Photo 1" /></div>
+  <div class="slide"><img src="./images/img-2.jpg" alt="Photo 2" /></div>
+  <div class="slide"><img src="./images/img-3.jpg" alt="Photo 3" /></div>
+  <div class="slide"><img src="./images/img-4.jpg" alt="Photo 4" /></div>
+  <button class="slider__btn slider__btn--left">&larr;</button>
+  <button class="slider__btn slider__btn--right">&rarr;</button>
+  <div class="dots"></div>
+</section>
+
 </body>
+<script>
+  let editor = document.querySelector('.editor_content')
+  let content = document.querySelector('.text')
+if(navigator.onLine){
+  content.style.display = 'block'
+}
+else{
+  let x = `<h4 class='notice'>Please connect to the internet and refresh the page to load the rich text editor!</h4>`
+  editor.insertAdjacentHTML('afterbegin', x)
+}
+tinymce.init({
+  selector: '.text',
+  width: 800,
+  resize: false,
+  menubar: true,
+  placeholder:'Please enter your text',
+  plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+  tinycomments_mode: 'embedded',
+  tinycomments_author: 'Author name',
+  mergetags_list: [
+    { value: 'First.Name', title: 'First Name' },
+    { value: 'Email', title: 'Email' },
+  ],
+  ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+});
+const slider = function(){
+  const slides = document.querySelectorAll('.slide');
+  const btnLeft = document.querySelector('.slider__btn--left');
+  const btnRight = document.querySelector('.slider__btn--right');
+  const dotContainer = document.querySelector('.dots');
+}
+</script>
 </html>
