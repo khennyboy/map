@@ -226,5 +226,29 @@ const slider = function () {
   });
 };
 slider();
+var menu = true;
+const show = ()=>{
+
+}
+//  toggle nav bar function
+// let nav_icon = document.querySelector('.nav_bar')
+// let nav_content = document.querySelector('.nav__links')
+// nav_icon.addEventListener('click', function(){
+// this.classList.toggle('change')
+// if(nav_icon.classList.contains('change')){
+//   nav_content.style.display = 'flex'
+// }
+// else{
+//   nav_content.style.display= 'none'
+// }
+// })
+
+// function resize(){
+//   var screenWidth = window.innerWidth || document.documentElement.clientWidth
+//   if(screenWidth>800 && nav_content.style.display=='none'){
+//     nav_content.style.display='flex'
+//   }
+// }
+// window.addEventListener('resize', resize)
 
 

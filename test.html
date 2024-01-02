@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Place the first <script> tag in your HTML's <head> -->
     <script src="https://cdn.tiny.cloud/1/t2w5p8jnny21nzlekytfry1exzdxn0gawshz2uuuyjn7ppnm/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <link rel="stylesheet" href="./test.css">
 </head>
@@ -17,23 +16,22 @@
   <div class="slide"><img src="./images/img-2.jpg" alt="Photo 2" /></div>
   <div class="slide"><img src="./images/img-3.jpg" alt="Photo 3" /></div>
   <div class="slide"><img src="./images/img-4.jpg" alt="Photo 4" /></div>
+  <div class="slide"><img src="./images/hero-image 1.png" alt="Photo 5" /></div>
+  <div class="slide"><img src="./images/user-2.jpg" alt="Photo 6" /></div>
   <button class="slider__btn slider__btn--left">&larr;</button>
   <button class="slider__btn slider__btn--right">&rarr;</button>
   <div class="dots"></div>
+  <span class="number"></span>
 </section>
-
 </body>
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+
   let editor = document.querySelector('.editor_content')
   let content = document.querySelector('.text')
 if(navigator.onLine){
   content.style.display = 'block'
-}
-else{
-  let x = `<h4 class='notice'>Please connect to the internet and refresh the page to load the rich text editor!</h4>`
-  editor.insertAdjacentHTML('afterbegin', x)
-}
-tinymce.init({
+  tinymce.init({
   selector: '.text',
   width: 800,
   resize: false,
@@ -49,11 +47,99 @@ tinymce.init({
   ],
   ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
 });
+}
+else{
+  let x = `<h4 class='notice'>Please connect to the internet and refresh the page to load the rich text editor!</h4>`
+  editor.insertAdjacentHTML('afterbegin', x)
+}
+
 const slider = function(){
   const slides = document.querySelectorAll('.slide');
   const btnLeft = document.querySelector('.slider__btn--left');
   const btnRight = document.querySelector('.slider__btn--right');
   const dotContainer = document.querySelector('.dots');
-}
+  let currentImage = document.querySelector('.number')
+
+  let curSlide = 0;
+  const maxSlide = slides.length;
+
+  const createDots = function(){
+    slides.forEach(function(_, i){
+      dotContainer.insertAdjacentHTML(
+        'beforeend',
+        `<button class="dots__dot" data-slide="${i}"></button>`
+      );
+    })
+  }
+
+  const activateDot = function(slide){
+    document.querySelectorAll('.dots__dot').
+    forEach(dot=>dot.classList.remove('dots__dot--active'));
+    document.querySelector(`.dots__dot[data-slide="${slide}"]`).
+    classList.add('dots__dot--active')
+  }
+
+  const imageNumber = function(image_index){
+    currentImage.innerHTML = `${image_index+1}/${maxSlide}`;
+  }
+  const goToSlide = function(slide){
+    slides.forEach((s,i)=>{
+      s.style.transform = `translateX(${100*(i-slide)}%)`
+    });
+  }
+
+  const nextSlide = function(){
+    if(curSlide===maxSlide-1){
+      curSlide=0
+    }
+    else {
+      curSlide++
+    }
+goToSlide(curSlide)
+activateDot(curSlide)
+imageNumber(curSlide)
+  }
+
+  const prevSlide = function(){
+    if(curSlide===0){
+      curSlide = maxSlide-1
+    }
+    else{
+      curSlide--
+    }
+    goToSlide(curSlide)
+    activateDot(curSlide)
+    imageNumber(curSlide)
+  }
+  const init = function(){
+    goToSlide(0)
+    createDots()
+    activateDot(0)
+    imageNumber(0)
+  }
+  
+  init();
+  btnRight.addEventListener('click', nextSlide);
+  btnLeft.addEventListener('click', prevSlide);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') prevSlide();
+    e.key === 'ArrowRight' && nextSlide();
+  });
+
+  dotContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('dots__dot')) {
+      const { slide } = e.target.dataset;
+      goToSlide(slide);
+      activateDot(slide);
+      imageNumber(+slide)
+    }
+  });
+
+};
+slider();
+
+  });
+
 </script>
 </html>
