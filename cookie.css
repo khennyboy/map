@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #e9dfdf;
+}
+.notifyCookie{
+    width: 70%;
+    height: 200px;
+    border-radius: 5px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    top: 0%;
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(0.1);
+    -webkit-transform: translate(-50%, -50%) scale(0.1);
+    -ms-transform: translate(-50%, -50%) scale(0.1);
+    background-color: #f3d4d4;
+    position: fixed;
+    opacity: 0;
+    z-index: -10000;
+    transition: transform 0.4s, top 0.4s, opacity 0.4s;
+    display: flex;
+}
+.show{
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 100000;
+}
+.notifyCookie h4{
+    padding: 10px;
+    padding-left: 0px;
+    width: 90%;
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+}
+.buttons button{
+    width: 40%;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+.buttons button:hover{
+    background-color: #edb6b6;
+}
+
+nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: orange;
+    flex-wrap: wrap;
+}
+nav ul li{
+    list-style-type: none;
+    padding: 20px 10px;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+}
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+}
+nav ul li:hover{
+    background-color: black;
+}
+nav ul li:hover > a{
+    color: #fff;
+}
+
+@media screen and (min-width:768px) {
+    .notifyCookie{
+        width: 50%;
+    }
+}
