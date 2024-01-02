@@ -78,14 +78,25 @@
      .operations{
         width: 100%;
      }
+    
+     .operations__tab-container{
+      margin-bottom: -30px;
+     }
+     .operations__tab span{
+      margin-right: 0;
+     }
      .operations__content {
-        padding: 1.2rem 1.5rem;
+        padding: 1rem 1.5rem;
         letter-spacing: 2px;
+     }
+     .operations__content p{
+      text-align: center;
      }
      .operations__content--active{
         grid-template-columns: 1fr;
         gap: 1rem;
      }
+ 
      .operations__tab-container{
         justify-content: space-around;
         padding: 0 1rem;
@@ -95,15 +106,16 @@
         border-radius: 50%;
         font-size: initial;
         width: 30%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
         font-weight: normal;
      }
      .operations__icon{
       height: 3rem;
       width: 3rem;
+      margin: 0 auto;
+     }
+     .operations__header{
+      font-size: 1.2rem;
+      font-weight: bold;
      }
 
      .slider{
@@ -155,6 +167,10 @@
      .modal{
       padding: 2rem;
      }
+     .modal__form{
+      grid-template-columns: 1fr;
+      gap: 0rem;
+    }
 }
 @media screen and (max-width: 475px) {
    .modal{
@@ -166,10 +182,7 @@
      font-size: 1;
      margin-top: 1rem;
    }
-   .modal__form{
-     grid-template-columns: 1fr;
-     gap: 0rem;
-   }
+  
    .modal__form input{
      margin-top: 0.3rem;
      margin-bottom: 1rem;
@@ -223,7 +236,10 @@
     .nav__links{
         width: 70%;
     }
-  
- 
 }
-
+@media screen and (min-width: 1250px) {
+   .operations__tab.btn{
+      padding: 0.6rem;
+      width: 25%;
+   }
+}

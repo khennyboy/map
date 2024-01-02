@@ -267,7 +267,7 @@
   
   .operations__tab-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   .btn {
     display: inline-block;
@@ -276,12 +276,19 @@
     font-family: inherit;
     font-weight: 500;
     border: none;
-    padding: 1.25rem 2rem;
     border-radius: 4rem;
     cursor: pointer;
     transition: all 0.3s;
   }
-  
+  .operations__tab.btn{
+    width: 30%;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }
   .btn:hover {
     background-color: var(--color-primary-darker);
   }
@@ -321,38 +328,37 @@
   .operations__content {
     display: none;
     font-size: 1.2rem;
-    padding: 2.5rem 7rem 6.5rem 7rem;
+    padding: 2.5rem ;
   }
   
   .operations__content--active {
     display: grid;
-    grid-template-columns: 7rem 1fr;
-    column-gap: 3rem;
-    row-gap: 0.5rem;
+    grid-template-columns: 1fr 5fr;
+    gap: 2rem;
   }
   
   .operations__header {
-    font-size: 2.25rem;
-    font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: bold;
     align-self: center;
   }
+  .operations__content p{
+    grid-column: 1/-1;
+  }
+
   
   .operations__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 7rem;
-    width: 7rem;
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
   }
   
   .operations__icon svg {
     height: 2.75rem;
     width: 2.75rem;
-  }
-  
-  .operations__content p {
-    grid-column: 2;
   }
   
   .operations__icon--1 {
@@ -383,6 +389,9 @@
     overflow: hidden;
   }
   
+  #section--3 .section__title{
+    margin-bottom: 0;
+  }
   .slide {
     position: absolute;
     top: 0;
@@ -392,6 +401,7 @@
     align-items: center;
     justify-content: center;
     transition: transform 1s;
+    background-color: brown;
   }
   
   .slide > img {
@@ -410,8 +420,8 @@
     font-family: inherit;
     color: #333;
     border-radius: 50%;
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 4rem;
+    width: 4rem;
     font-size: 3.25rem;
     cursor: pointer;
   }
@@ -459,6 +469,7 @@
   .testimonial {
     width: 65%;
     position: relative;
+    background-color:blue;
   }
   
   .testimonial::before {
@@ -467,7 +478,7 @@
     top: -5.7rem;
     left: -6.8rem;
     line-height: 1;
-    font-size: 20rem;
+    font-size: 10rem;
     font-family: inherit;
     color: var(--color-primary);
     z-index: -1;
@@ -488,7 +499,6 @@
   .testimonial__author {
     margin-left: 3rem;
     font-style: normal;
-  
     display: grid;
     grid-template-columns: 6.5rem 1fr;
     column-gap: 2rem;
