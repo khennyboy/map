@@ -214,6 +214,14 @@
        .testimonial__name{
         font-size: 1.2rem;
        }
+       .notifyCookie{
+        width: 70%;
+        height: 40%;
+       }
+       .buttons button{
+        font-size: 1rem;
+        padding: 1rem 1.2rem;
+       }
 
 }
 @media screen and (max-width: 475px) {
@@ -294,6 +302,13 @@
     font-size: 1rem;
      padding: 0.7rem 1rem;
     }
+.notifyCookie{
+        width: 90%;
+        height: 50%;
+ }
+.buttons button{
+        font-size: 0.8rem;
+}
  
 }
 @media screen and (max-width: 1250px) {

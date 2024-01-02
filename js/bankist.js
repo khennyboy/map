@@ -1,12 +1,9 @@
-'use strict';
-
-///////////////////////////////////////
-// Modal window
-
+window.addEventListener('load', function(){  
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+
 
 const openModal = function (e) {
   e.preventDefault()
@@ -252,7 +249,78 @@ document.addEventListener('click', function(e){
     }
 })
 
+let x = document.querySelector('.accept');
+let y = document.querySelector('.reject');
+let z = document.querySelector('.notifyCookie');
+if(localStorage.confirm){
+    checkCookie()
+}
+else if(sessionStorage.reject){
+    z.classList.remove('show');
+    overlay.classList.add('hidden');
+}
+else{
+    setTimeout(()=>{
+    overlay.classList.remove('hidden');
+    z.classList.add("show"), 2000
+})
+}  
+  // function to set a cookie
+  function setCookie(cname, cvalue, exdays){
+    var d = new Date()
+    d.setTime(d.getTime()+ (exdays*24*60*60*1000));
+    var expires = 'expires = ' + d.toUTCString()
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path =/"
+}
 
+// function to get a cookie
+function getCookie(cname){
+    var name = cname + '=';
+    var decodedCookie = decodeURIComponent(document.cookie)
+    var ca= decodedCookie.split(';');
+    for(var i=0; i<ca.length; i++){
+        var c = ca[i];
+        while(c.charAt(0)==' '){
+            c=c.substring(1);
+        }
+        if(c.indexOf(name)==0){
+            return c.substring(name.length, c.length)
+        }
+    }
+    return '';
+}
+// function to check a cookie
+function checkCookie(){
+var username = getCookie('username');
+if(username!=''){
+    let name = document.querySelector('.cookie_message');
+    name.innerHTML= `You are welcome to our website ${username.charAt(0).toUpperCase()}${username.substring(1)}!`;
+    z.classList.remove('show')
+}
+else{
+    username= prompt('Please enter your name:', '');
+    if((username !='' && username!=null )){
+        setCookie('username', username, 365);
+        localStorage.confirm = true;
+        z.classList.remove('show')
+        overlay.classList.add('hidden');
+    }
+}
+}
+x.onclick =function(){
+    checkCookie();
+}
+y.onclick = function(){
+    z.classList.remove('show');
+    overlay.classList.add('hidden');
+    sessionStorage.reject = true;
+}
+
+// document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+// document.cookie = "profession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+// localStorage.clear();
+// sessionStorage.clear()
+})
 
 
 
