@@ -16,14 +16,14 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <div class="image_case">
+      
           <img
           src='./images/bankist_logo.png'
           alt="Bankist logo"
           class="nav__logo"
           id="logo"
         />
-        </div>
+    
         <ul class="nav__links">
           <li class="nav__item">
             <a class="nav__link" href="#section--1">Features</a>
@@ -40,11 +40,14 @@
             >
           </li>
         </ul>
-        <div class="nav_bar">
+    
+         <div class="nav_bar">
           <div class="icon bar1"></div>
           <div class="icon bar2"></div>
           <div class="icon bar3"></div>
+  
         </div>
+        
       </nav>
 
       <div class="header__title">
@@ -344,16 +347,17 @@
         in just <span class="highlight">5 minutes</span>
       </h2>
       <form class="modal__form">
-        <label>First Name</label>
-        <input type="text" />
-        <label>Last Name</label>
-        <input type="text" />
-        <label>Email Address</label>
-        <input type="email" />
-        <button class="btn">Next step &rarr;</button>
+        <label for="firstname">First Name:</label>
+        <input type="text"  required name="firstname" id="firstname"/>
+        <label for="lastname">Last Name:</label>
+        <input type="text" required  name="lastname" id="lastname"/>
+        <label for="email">Email Address:</label>
+        <input type="email" required name="email" id="email"/>
+        <button  type="submit" class="btn">Next step &rarr;</button>
       </form>
     </div>
-    <div class="overlay hidden"></div>
+    <div class="overlay hidden"></div> 
+    <div class="cookie_message cookie"></div>
 
     <script src="./js/bankist.js"></script>
   </body>
