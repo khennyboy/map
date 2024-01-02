@@ -226,5 +226,33 @@ const slider = function () {
   });
 };
 slider();
+let nav_icon = document.querySelector('.nav_bar')
+let nav_content = document.querySelector('.nav__links')
+
+nav_icon.addEventListener('click', function(){
+nav_icon.classList.toggle('change')
+if(nav_icon.classList.contains('change')){
+  nav_content.classList.add('show')
+}
+else{
+  nav_content.classList.remove('show')
+}
+})
+window.addEventListener('resize', function(){
+if(nav_icon.classList.contains('change')){
+nav_content.classList.remove('show')
+nav_icon.classList.remove('change')
+}
+})
+
+document.addEventListener('click', function(e){
+  if(nav_icon.classList.contains('change') && !document.querySelector('.nav__links').contains(e.target) && !document.querySelector('.nav_bar').contains(e.target)){
+    nav_icon.classList.remove('change')
+    nav_content.classList.remove('show')
+    }
+})
+
+
+
 
 

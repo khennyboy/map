@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub User Details</title>
+  <style>
+    /* Your CSS styles here */
+  </style>
+</head>
+<body>
+  <input type="text" id="username" placeholder="Enter GitHub username">
+  <button onclick="getUserDetails()">Get Details</button>
+  <div id="userDetails"></div>
+
+  <script>
+    // Your JavaScript code here
+    function getUserDetails() {
+      const username = document.getElementById('username').value;
+
+      // Fetch user details from GitHub API
+      fetch(`https://api.github.com/users/${username}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+          // Display user details
+          const userDetailsDiv = document.getElementById('userDetails');
+          userDetailsDiv.innerHTML = `
+            <h2>${data.name}</h2>
+            <p>Username: ${data.login}</p>
+            <p>Followers: ${data.followers}</p>
+            <p>Following: ${data.following}</p>
+            <p>Public Repos: ${data.public_repos}</p>
+            <img src="${data.avatar_url}" alt="Avatar" style="width: 100px; height: 100px;">
+          `;
+        })
+        .catch(error => {
+          // Display error message if user is not found or other errors
+          const userDetailsDiv = document.getElementById('userDetails');
+          userDetailsDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+        });
+    }
+  </script>
+</body>
+</html>
