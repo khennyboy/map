@@ -25,7 +25,7 @@
         align-items:center;
         display: none;
     }
-    .show.nav__links{
+    .showNav.nav__links{
         display: flex;
     }
     .nav__links >  li{
