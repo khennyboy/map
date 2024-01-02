@@ -189,6 +189,7 @@
     }
     .testimonial{
         width: 80%;
+        text-align: center;
     }
     #section--3{
     padding-left: 0;
@@ -200,17 +201,28 @@
     .slider__btn--right{
         right: 0px;
     }
+    .section--sign-up .btn{
+       font-size: 1.2rem;
+        padding: 1rem;
+       }
+    .footer__copyright{
+        font-size: initial;
+       }
 
 }
 @media screen and (max-width: 475px) {
    .modal{
-     width: 90%;
+     width: 95%;
      height: 90%;
-     padding: 2rem;
+     padding: 1rem 2rem;
    }
    .modal__header{
      font-size: 1;
      margin-top: 1rem;
+   }
+   .btn--close-modal{
+    top: 0;
+    right: 0;
    }
   
    .modal__form input{
@@ -219,7 +231,10 @@
    }
    .btn--close-modal{
      top: 0;
-     right: 1rem;
+     right: 0;
+   }
+   .modal__header{
+    padding-top: 5px;
    }
    .modal__form button{
      justify-self: initial;
@@ -261,13 +276,19 @@
       margin-bottom: 0;
       font-size: 1.2rem;
    }
-   .section--sign-up .btn{
-    font-size: 1.2rem;
-    padding: 1rem;
-   }
-   .footer__copyright{
-    font-size: initial;
-   }
+   .slider{
+    height: 60rem;
+    width: 100%;
+}
+
+.slide{
+    height: 60rem;
+}
+.section--sign-up .btn{
+    font-size: 1rem;
+     padding: 0.7rem 1rem;
+    }
+ 
 }
 @media screen and (max-width: 1250px) {
     .nav__links{
