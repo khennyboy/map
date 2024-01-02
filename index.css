@@ -208,6 +208,9 @@
     .footer__copyright{
         font-size: initial;
        }
+       .dots{
+        bottom: 0;
+       }
 
 }
 @media screen and (max-width: 475px) {
@@ -295,9 +298,15 @@
         width: 70%;
     }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1250px) {
    .operations__tab.btn{
       padding: 0.6rem;
       width: 25%;
+   }
+   .slide{
+    height: 40rem;
+   }
+   .slide{
+    height: 40rem;
    }
 }
