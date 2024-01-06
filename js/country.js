@@ -14,6 +14,7 @@ function getCountry(name) {
       return;
     }
     const [data] = JSON.parse(this.responseText);
+    console.log(data)
     var html = ` <article class="country">
     <img class="country__img" src="${data.flags.png}" />
     <div class="country__data">
