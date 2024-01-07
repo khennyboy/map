@@ -25,6 +25,7 @@
   .form{
     margin: 0 auto;
     margin-top: 20px;
+    flex-wrap: wrap;
     display: flex;
     width: 35%;
     justify-content: space-between;
@@ -44,7 +45,9 @@
     font-size: 1.7rem;
   }
   .form button{
-    border-radius: 10px;
+    border: inherit;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     background-color: green;
     color: #fff;
     width: 40%;
@@ -59,13 +62,11 @@
     text-align: center;
   }
   .form input::placeholder{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
   }
-  .container {
-    width: fit-content;
-    margin: 0 auto;
-  }
-  
+
   .country {
     display: flex;
     align-items: center;
@@ -74,6 +75,7 @@
     box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
     font-size: 1.8rem;
     width: 30rem;
+    margin: 0 auto;
     border-radius: 0.7rem;
   }
   
