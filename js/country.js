@@ -21,7 +21,7 @@ function getCountry(name) {
     <div class="country__data">
       <h3 class="country__name">${data.name.common}</h3>
       <h4 class="country__region">${data.region}</h4>
-      <p class="country__row"><span>👫</span>${(+data.population / 1000).toFixed(1)} people</p>
+      <p class="country__row"><span>👫</span>${(+data.population / 1000000).toFixed(1)} Millions</p>
       <p class="country__row"><span>🗣️</span>${Object.values(data.languages)[0]} </p>
       <p class="country__row"><span>💰</span>${Object.values(data.currencies)[0].name} ${Object.values(data.currencies)[0].symbol}</p>
     </div>
