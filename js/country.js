@@ -14,16 +14,18 @@ function getCountry(name) {
       return;
     }
     const [data] = JSON.parse(this.responseText);
+    console.log(data)
     let x = data.name.common.toLowerCase();
-    if (value === x ){
+    if (name === x ){
     var html = ` <article class="country">
     <img class="country__img" src="${data.flags.png}" />
     <div class="country__data">
       <h3 class="country__name">${data.name.common}</h3>
       <h4 class="country__region">${data.region}</h4>
-      <p class="country__row"><span>👫</span>${(+data.population / 1000000).toFixed(1)} Millions</p>
+      <p class="country__row"><span>👫</span>${(+data.population / 1000000).toFixed(1)} Million</p>
       <p class="country__row"><span>🗣️</span>${Object.values(data.languages)[0]} </p>
       <p class="country__row"><span>💰</span>${Object.values(data.currencies)[0].name} ${Object.values(data.currencies)[0].symbol}</p>
+      <p class='country__row'><span>👑</span><img class="coatOfArm" src="${data.coatOfArms.svg}" /></div>
     </div>
   </article>`;
     document.body.insertAdjacentHTML('beforeend', html);
@@ -43,6 +45,8 @@ function getCountry(name) {
 function displayErrorMessage(message) {
     document.querySelector('.error-message').innerHTML= message
 }
+// initial call
+getCountry('nigeria');
 // handle submit button
 document.forms['countryForm'].addEventListener('submit', function(e){
     submit.innerHTML = 'Loading...'
@@ -51,3 +55,5 @@ document.forms['countryForm'].addEventListener('submit', function(e){
     value = value.toLowerCase() 
     getCountry(value)
 })
+
+

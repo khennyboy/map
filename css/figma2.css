@@ -1,0 +1,39 @@
+@media screen and (max-width: 867px) {
+    .wrapper{
+        width: 90%;
+        margin: 0 auto;
+    }
+    nav{
+        width: 90vw;
+    }
+    nav ul{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color:var(--dark-color);
+        top: 0;
+        left: 0;
+        display: none;
+        text-align: center;
+        padding-top: 150px;
+    }
+    nav ul li{
+        display: block;
+        padding-top: 32px;
+    }
+    nav ul li a.menu.btn{
+        background-color:var(--orange-color);
+    } 
+}
+@media screen and (min-width: 869px) and (max-width: 1132px) {
+    .wrapper{
+        width: 90%;
+        margin: 0 auto;
+    }
+    nav{
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 475px) {
+ 
+}

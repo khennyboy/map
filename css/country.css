@@ -122,7 +122,11 @@
     text-align: center;
     margin-top: 20px;
   }
-  
+  .coatOfArm{
+    width: 30px;
+    aspect-ratio: 1;
+    vertical-align:bottom;
+  }
 
 @media screen and (max-width: 876px) {
     .form{
