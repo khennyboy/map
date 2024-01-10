@@ -1,25 +1,21 @@
 window.addEventListener('load', function(){
-let icon = document.querySelector('.icon')
+let open_icon = document.querySelector('.open_menu')
+let close_icon = document.querySelector('.close_menu')
 let nav_ul = document.querySelector('.header ul')
-let image = document.querySelector('.icon img')
 let nav_tag = document.querySelector('nav.header')
 
-icon.onclick = function(){
-    this.classList.toggle('show2')
-    if(icon.classList.contains('show2')){
-       image.setAttribute('src', './images/XOutline.png')
-       nav_ul.classList.add('show1')
-    }
-    else{
-        image.setAttribute('src', './images/MenuAlt4Outline.svg')
-        nav_ul.classList.remove('show1')
-    }
+open_icon.onclick = function(){
+    nav_ul.classList.add('show1')
+    close_icon.classList.add('show')
+}
+close_icon.onclick = function(){
+    nav_ul.classList.remove('show1')
+    this.classList.remove('show')
 }
 window.addEventListener('resize', function(){
-if(icon.classList.contains('show2')){
-    image.setAttribute('src', './../images/MenuAlt4Outline.svg')
+if(close_icon.classList.contains('show')){
+    close_icon.classList.remove('show')
     nav_ul.classList.remove('show1')
-    icon.classList.remove('show2')
 }
 })
 
