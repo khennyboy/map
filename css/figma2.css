@@ -25,7 +25,7 @@
         display: block;
         text-align: center;
         padding-top: 150px;
-        transition: 0.2s ease-in-out;
+        transition: 0.3s ease-in-out;
         overflow: hidden;
     }
     nav ul.show1{
@@ -55,6 +55,7 @@
     }
     .icon.show2{
         position: absolute;
+        top: 20px;
         left: 20px;
     }
 }
@@ -66,6 +67,9 @@
     }
     nav.scroll{
         padding: 10px;
+    }
+    nav ul{
+        transition: 0.4s ease-in-out;
     }
 }
 /* tablet design */
