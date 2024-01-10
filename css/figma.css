@@ -14,6 +14,7 @@
 }
 body{
     font-family: "Poppins", sans-serif;
+    overflow-x:hidden ;
 }
 .section {
   transition: transform 1s, opacity 1s;
