@@ -21,7 +21,7 @@
         height: 100vh;
         background-color:var(--dark-color);
         top: 0;
-        left: 0;
+        right: 0;
         display: block;
         text-align: center;
         padding-top: 150px;
@@ -57,7 +57,7 @@
         display: block;
         position: absolute;
         top: 20px;
-        left: 20px;
+        right: 20px;
     }
 }
 
