@@ -50,14 +50,18 @@
     nav ul li a.menu.btn:hover{
         background-color: var(--light-orange-color);
     }
-    .open_menu{
+    .icon{
         display: block;
+    }
+    .close_menu{
+        display: none;
+        cursor: pointer;
     }
     .close_menu.show{
         display: block;
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 30px;
+        right: 50px;
     }
 }
 

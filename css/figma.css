@@ -564,10 +564,10 @@ form button{
   line-height: 200%; 
   padding-left: 116px;
   }
-.open_menu, .close_menu{
+.icon{
   display: none;
-  cursor: pointer;
 }
 .open_menu{
   padding-right: 20px;
+  cursor: pointer;
 }
