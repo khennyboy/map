@@ -1,10 +1,10 @@
 /* Large screen */
 @media screen and (max-width: 867px) {
     .wrapper{
-        padding: 0 50px;
+        padding: 0 32px;
     }
     nav.header{
-        padding: 0 20px;
+        padding: 0 32px;
         top: 0;
         transform: none;
         left: 0;
@@ -64,29 +64,242 @@
         top: 30px;
         right: 50px;
     }
+    /* Responsiveness styling start */
+    .wrapper_header{
+        padding: 0px;
+    }
+    .hero-section{
+        overflow: hidden;
+        flex-direction: column;
+    }
+    .hero-section .left h1{
+        padding-top: 58px;
+        font-size: 36px;
+    }
+    .hero-section .left{
+        width: 100%;
+        padding: 0 32px;
+    }
+    .hero-section .right{
+        position: absolute;
+        right: -70px;
+        bottom: 0;
+    }
+    .hero-section .right img{
+        width: 306px;
+        height: 399px;
+    }
+    .achievement-card.student-enrolled{
+        left: 120px;
+        top:initial;
+        bottom: 190px;
+    }
+    .achievement-card.overall-rating{
+        left: 32px;
+        bottom: 67px;
+        top: initial;
+    }
+    .enrol{
+        padding: 12px 32px;
+    }
+    /* next section */
+    #section_1{
+        padding-bottom: 100px;
+    }
+    .testimonials-section{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+    .testimonials-section .left,   .testimonials-section .right{
+        width: 100%;
+    }
+    .testimonials-section .left .bottom{
+        left: 0;
+        position: initial;
+      }
+      #section_1::before{
+        top: initial;
+        left: 80;
+        bottom: 200px;
+      }
+   
+    .testimonials-section .left{
+        margin-top: 71px;
+    }
+    .testimonials-section .right h2{
+        font-size: 40px;
+    }
+    .testimonials-section .right a{
+        position: absolute;
+        right: 32px;
+        bottom:111px;
+    }
+    .testimonial-card{
+        justify-content: space-between;
+    }
+    .testimonial-card .info{
+        padding-left: 32px;
+    }
+    .testimonial-card img{
+        margin-right: 32px;
+    }
+    /* another section */
+    .courses-section h2{
+        font-size: 30px;
+    }
 }
 
 /* small screen */
 @media screen and (max-width: 475px) {
-    .wrapper{
-        padding: 0;
-    }
     nav.scroll{
         padding: 10px;
     }
     nav ul{
         transition: 0.4s ease-in-out;
     }
+    .hero-section .left h1{
+        padding-top: 20px;
+    }
+    .hero-section .right{
+        right: -100px;
+    }
+    .hero-section .right img{
+        height: 365px;
+    }
+    .achievement-card.student-enrolled{
+        left: 27px;
+        bottom: 150px;
+    }
+    .achievement-card.overall-rating{
+        bottom: 20px;
+    }
+    .achievement-card{
+        width: 150px;
+        text-align: center;
+    }
+    #section_1::before{
+        left: 83px;
+        top: initial;
+        bottom: 180px;
+      }
+      .testimonial-card .info h4{
+        font-size: 18px;
+      }
+      .testimonial-card{
+        column-gap: auto;
+      }
+      .testimonial-card img{
+        width: 100px;
+      }
+     
 }
 /* tablet design */
-@media screen and (min-width: 869px) and (max-width: 1132px) {
+@media screen and (min-width: 869px) and (max-width: 1200px) {
     .wrapper{
-        padding: 0 50px;
+        padding: 0 100px;
     }
+
     nav.header{
-        padding:0 100px;
+        padding:0 60px;
         transform: none;
         left: 0;
     }
+    .wrapper_header{
+        padding: 0px;
+    }
+    .hero-section{
+        flex-direction: column;
+        padding-top: 167px;
+        overflow: hidden;
+    }
+    .hero-section .left{
+        width: 100%;
+        padding: 0 100px;
+    }
+    .hero-section .right{
+        position: absolute;
+        right: -15px;
+        bottom: 0;
+    }
+    .hero-section .left h1{
+        font-size: 40px;
+    }
+    .hero-section .left p{
+        position: relative;
+        z-index: 10;
+    }
+    /* Another section */
+    #section_1{
+        padding-bottom: 100px;
+    }
+    .achievement-card{
+        min-width:150px;
+    }
+    .achievement-card.overall-rating{
+        left: 30%;
+    }
+    #section_1::before{
+        top: initial;
+        bottom: 172px;
+    }
+    .achievement-card.student-enrolled{
+        left: 35%;
+        bottom: 33%;
+        top: initial;
+    }
+    .testimonials-section{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    .testimonials-section .left{
+        margin-top: 50px;
+    }
+    .testimonials-section .left,   .testimonials-section .right{
+        width: 100%;
+    }
+    .testimonials-section .left .bottom{
+        left: 0;
+        position: initial;
+      }
+    .testimonials-section .right h2{
+        font-size: 40px;
+    }
+    .testimonials-section .right a{
+        position: absolute;
+        right: 100px;
+        bottom:111px;
+    }
+    .testimonial-card{
+        justify-content: space-between;
+    }
+    .testimonial-card .info{
+        padding-left: 32px;
+    }
+    .testimonial-card img{
+        margin-right: 32px;
+    }
+    /* another section */
+    .courses-section h2{
+        font-size: 40px;
+    }
+    .course-cards{
+        flex-direction: column;
+        align-content: center;
+        gap: 80px;
+    }
+    /* .course-card{
+        width: 632px;
+    }
+ 
+    .course-card img{
+        width: 100%;
+        border-radius: inherit;
+    }
+    .course-card::after{
+        width: 568px;
+    } */
 }
 

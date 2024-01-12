@@ -10,45 +10,16 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .wrapper {
-            display: grid;
-            grid-gap: 5px;
-            grid-template-columns: repeat(5, 1fr); 
+
+        .wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            gap : 10px;
         }
-        .wrapper > div {
-            text-align: center;
-        }
-        .header {
-            background-color: blue;
-            height: 50px;
-            grid-column: 1 / -1; 
-        }
-        .footer {
-            background-color: purple;
-            height: 50px;
-            grid-column: 1 / -1;
-        }
-        .content {
-            background-color: burlywood;
-            height: 200px;
-            grid-column: 3 / -1; 
-        }
-        .menu {
-            background-color: tomato;
-            height: 200px;
-            grid-column: 1 / span 2;  
-        }
-        /* Media query for smaller screens */
-        @media screen and (max-width: 500px) {
-            .wrapper {
-                grid-template-columns: 1fr; /* Stack all elements on smaller screens */
-            }
-            .header,
-            .footer,
-            .content,
-            .menu {
-                grid-column: auto;
-            }
+        .wrapper > div{
+            width: 90%;
+            height: 100px;
+            background-color: brown;
         }
     </style>
 </head>
