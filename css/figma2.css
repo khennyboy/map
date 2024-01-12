@@ -169,6 +169,7 @@
     } 
     .course-card::after{
         width: 568px;
+        padding: 0 32px;
     }
     .course-card .info{
         height: auto;
@@ -246,15 +247,15 @@
     }
     .achievement-card.student-enrolled{
         left: 27px;
-        bottom: 130px;
-        height: 75px;
+        bottom: 170px;
+        /* height: 75px; */
     }
     .achievement-card.overall-rating{
-        bottom: 40px;
-        height: 75px;
+        bottom: 60px;
+        /* height: 75px; */
     }
     .achievement-card{
-        width: 150px;
+        width: 200px;
         text-align: center;
     }
     #section_1::before{
@@ -262,6 +263,7 @@
         top: initial;
         bottom: 180px;
       }
+
       .testimonial-card .info h4{
         font-size: 18px;
       }
