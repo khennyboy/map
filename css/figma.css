@@ -330,7 +330,7 @@ nav ul li a{
 .courses-section .wrapper{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 .courses-section h2{
     color: #FFF;
@@ -348,11 +348,30 @@ nav ul li a{
     margin-top: 56px;
     width: 100%;
 }
+.allCourses.large{
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 40px;
+}
+.allCourses.small{
+  display: none;
+}
+.course-card{
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  padding: 0px 32px;
+  background: #fff;
+  border-radius: 24px;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+}
 .course-card::after{
     position: absolute;
     content: '';
     height: 8px;
-    width: 442px;
+    width: 536px;
     border-radius: 24px;
     background: var(--dark-blue-color);
     bottom: 0;
@@ -360,24 +379,12 @@ nav ul li a{
     transform: translateX(-50%);
 }
 
-.course-card{
-    display: flex;
-    flex-wrap: wrap;
-    width: 526px;
-    padding: 0px 32px;
-    background: #fff;
-    border-radius: 24px;
-    position: relative;
-    justify-content: center;
-}
-
 .course-card img{
     height: 260px;
-    padding-top: 0;
     width: 100%;
-    object-fit:cover;
-    display: inline-block;
-    
+    object-fit:fill;
+    position: relative;
+    top: -4px;
 }
 .course-card .info{
     display: flex;
@@ -386,6 +393,7 @@ nav ul li a{
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin: 30px 0;
 }
 
 .course-card .info h3{
@@ -395,7 +403,7 @@ nav ul li a{
    font-style: normal;
    font-weight: 900;
    line-height: 150%; 
-   width: 374px
+   width: 80%;
 }
 .course-card .info .duration{
    color: var(--dark-blue-color);
@@ -417,11 +425,7 @@ nav ul li a{
   width: 20px;
   height: 20px;
 }
-.allCourses{
-  margin-left: auto;
-  margin-right: 0;
-  margin-top: 40px;
-}
+
 
 .app-section{
   padding: 100px 0;
