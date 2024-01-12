@@ -169,7 +169,6 @@
     } 
     .course-card::after{
         width: 568px;
-        padding: 0 32px;
     }
     .course-card .info{
         height: auto;
@@ -248,11 +247,12 @@
     .achievement-card.student-enrolled{
         left: 27px;
         bottom: 170px;
-        /* height: 75px; */
     }
     .achievement-card.overall-rating{
         bottom: 60px;
-        /* height: 75px; */
+    }
+    .course-card::after{
+        width: 350px;
     }
     .achievement-card{
         width: 200px;
