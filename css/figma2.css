@@ -145,6 +145,9 @@
     .testimonial-card img{
         margin-right: 32px;
     }
+    .testimonial-card .info p{
+        font-size: 14px;
+    }
     /* another section */
     .courses-section h2{
         font-size: 30px;
@@ -188,7 +191,7 @@
         font-size: 18px;
       }
       .testimonial-card{
-        column-gap: auto;
+        column-gap: 0;
       }
       .testimonial-card img{
         width: 100px;
