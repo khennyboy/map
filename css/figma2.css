@@ -90,9 +90,9 @@
         height: 399px;
     }
     .achievement-card.student-enrolled{
-        left: 120px;
+        left: 200px;
         top:initial;
-        bottom: 190px;
+        bottom: 180px;
     }
     .achievement-card.overall-rating{
         left: 32px;
@@ -255,7 +255,7 @@
         width: 350px;
     }
     .achievement-card{
-        width: 200px;
+        max-width: 200px;
         text-align: center;
     }
     #section_1::before{
